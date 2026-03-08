@@ -4,7 +4,7 @@
 <head>
     <title>Personal Profile Generator</title>
     <style>
-        /* Your existing CSS from Code 2 */
+        
         * {
             margin: 0;
             padding: 0;
