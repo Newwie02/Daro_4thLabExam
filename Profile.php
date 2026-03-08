@@ -1,5 +1,4 @@
 <?php
-// Handle data from Code 2
 $fullname = $_POST['fullname'] ?? 'N/A';
 $age = $_POST['age'] ?? 'N/A';
 $course = $_POST['course'] ?? 'N/A';
@@ -7,19 +6,18 @@ $email = $_POST['email'] ?? 'N/A';
 $gender = $_POST['gender'] ?? 'N/A';
 $bio = $_POST['bio'] ?? 'No biography provided.';
 
-// Check if hobbies are selected to avoid errors
 $hobbies = $_POST['hobbies'] ?? [];
 $hobbyList = !empty($hobbies) ? implode(", ", $hobbies) : "None selected";
 
-// File upload logic
+// File upload 
 $targetDir = "uploads/";
-// Create directory if it doesn't exist
+
 if (!file_exists($targetDir)) {
     mkdir($targetDir, 0777, true);
 }
 
 $fileName = basename($_FILES["profile_image"]["name"]);
-$targetFile = $targetDir . time() . "_" . $fileName; // Added time() to prevent overwriting same-name files
+$targetFile = $targetDir . time() . "_" . $fileName; 
 
 move_uploaded_file($_FILES["profile_image"]["tmp_name"], $targetFile);
 ?>
@@ -30,7 +28,7 @@ move_uploaded_file($_FILES["profile_image"]["tmp_name"], $targetFile);
 <head>
     <title>Your Profile</title>
     <style>
-        /* Styled to match the form theme */
+       /* Style CSS */
         body {
             height: 100vh;
             display: flex;
